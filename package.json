@@ -21,7 +21,7 @@
   "main": "dist/vue-tiptop-editor.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jerryz0312/vue-tiptop-editor.git"
+    "url": "git+https://github.com/James-Zhouj/vue-tiptop-editor.git"
   },
   "exports":{
     ".":{
