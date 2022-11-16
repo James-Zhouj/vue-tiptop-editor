@@ -4,7 +4,6 @@
   "version": "0.0.2",
   "author": "",
   "type": "module",
-  "private":"true",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
