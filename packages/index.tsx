@@ -1,7 +1,13 @@
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
+import "./index.scss"
+import Header from "./header"
+import Content from "./content"
 
 export default defineComponent({
     setup() {
-        return () => "我的第一个开源项目"
+        return () => <div class="editor-container" style="height:300px">
+            <Header class="editor-container__header"></Header>
+            <Content class="editor-container___content"></Content>
+        </div>
     }
 })
