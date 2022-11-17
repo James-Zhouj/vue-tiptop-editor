@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tiptap/starter-kit": "2.0.0-beta.202",
+    "@tiptap/vue-3": "2.0.0-beta.202",
     "vue": "^3.2.41"
   },
   "devDependencies": {
@@ -23,12 +25,15 @@
     "type": "git",
     "url": "git+https://github.com/James-Zhouj/vue-tiptop-editor.git"
   },
-  "exports":{
-    ".":{
-      "import":"./dist/vue-tiptop-editor.js",
-      "require":"./dist/vue-tiptop-editor.umd.cjs"
+  "exports": {
+    ".": {
+      "types": "./dist/vue-tiptop-editor.d.ts",
+      "import": "./dist/vue-tiptop-editor.js",
+      "require": "./dist/vue-tiptop-editor.umd.cjs"
     }
   },
-  "files": ["dist/*"],
+  "files": [
+    "dist/*"
+  ],
   "license": "MIT"
 }
