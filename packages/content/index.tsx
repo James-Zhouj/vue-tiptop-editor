@@ -5,15 +5,12 @@ import { Editor, EditorContent } from '@tiptap/vue-3'
 export default defineComponent({
     props:{
         editor:{
-            type: Object as PropType<Editor | undefined> ,
+            type: Object as PropType<Editor> ,
             required: true
         }
     },
     setup(props) {
-
-        const _editor = computed( () => props.editor ) 
-
-        
+        const _editor = computed( () => props.editor )
         return () => <EditorContent class="content" editor={_editor.value} />
     }
 
