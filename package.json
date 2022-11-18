@@ -1,7 +1,7 @@
 {
   "name": "vue-tiptop-editor",
   "description": "基于vue3,typescript,tiptop开发的富文本编辑器",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "",
   "type": "module",
   "scripts": {
