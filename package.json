@@ -8,7 +8,8 @@
     "dev": "npm run clean && vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\""
   },
   "dependencies": {
     "rimraf": "^3.0.2",
@@ -23,6 +24,7 @@
     "@vitejs/plugin-vue-jsx": "^2.1.1",
     "eslint": "^8.28.0",
     "eslint-plugin-vue": "^9.7.0",
+    "prettier": "^2.8.0",
     "typescript": "^4.6.4",
     "unocss": "^0.46.5",
     "vite": "^3.2.3",
