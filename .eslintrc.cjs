@@ -2,6 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es2021": true,
+        // 为了解决vscode的eslint插件关于module报错处理
+        "node": true
     },
     "extends": [
         "eslint:recommended",
