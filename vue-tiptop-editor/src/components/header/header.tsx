@@ -13,30 +13,12 @@ export default defineComponent({
         }
     },
     setup({ editor }) {
-
-        console.log("editor", editor);
-        
-
-
-        const setBold = () => {
-            editor.value.chain().focus().toggleBold().run()
-        }
-
-        const setItalic = () => {
-            editor.value.chain().focus().toggleItalic().run()
-        }
-
-        const aa = () => {
-            editor.chain().focus().toggleStrike().run()
-        }
-
-
         return () => <div class="editor-header">
-            <BoldSvg onClick={setBold}></BoldSvg>
-            <ItalicSvg onClick={setItalic}></ItalicSvg>
+            <BoldSvg onClick={() =>  editor.value.chain().focus().toggleBold().run()}></BoldSvg>
+            <ItalicSvg onClick={() => editor.value.chain().focus().toggleItalic().run()}></ItalicSvg>
             <StrikethroughSvg onClick={ () => editor.value.chain().focus().toggleStrike().run()}></StrikethroughSvg>
             <CodeSvg onClick={ () => editor.value.chain().focus().toggleCode().run()}></CodeSvg>
-            <HighlightSvg onClick={ () =>  editor.value.chain().focus().toggleHighlight().run()}></HighlightSvg>
+            {/* <HighlightSvg onClick={ () =>  editor.value.chain().focus().toggleHighlight().run()}></HighlightSvg> */}
             <H1Svg onClick={ () => editor.value.chain().focus().toggleHeading({ level: 1 }).run()}></H1Svg>
             <H2Svg onClick={ () => editor.value.chain().focus().toggleHeading({ level: 2 }).run()}></H2Svg>
             <H3Svg onClick={ () => editor.value.chain().focus().toggleHeading({ level: 3 }).run()}></H3Svg>

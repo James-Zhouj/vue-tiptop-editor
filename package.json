@@ -1,9 +1,7 @@
 {
   "name": "vue-tiptop-editor",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "type": "module",
-  "main": "vue-tiptop-editor.umd.js",
-  "module": "vue-tiptop-editor.js",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -31,11 +29,14 @@
     "vue-tsc": "^1.0.12"
   },
   "license": "MIT",
+  "main": "vue-tiptop-editor.umd.js",
+  "module": "vue-tiptop-editor.js",
   "exports":{
-    "*":{
-      "import":"./vue-tiptop-editor.js",
-      "require":"./vue-tiptop-editor.umd.cjs"
-    }
+    ".":{
+      "import":"./dist/vue-tiptop-editor.js",
+      "require":"./dist/vue-tiptop-editor.umd.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "files": ["dist/*"]
 }

@@ -1,32 +1,41 @@
-import { defineComponent, onMounted, provide, ref } from "vue";
-import { Editor } from '@tiptap/vue-3'
+import { computed, defineComponent, onMounted, onUnmounted, provide, ref } from "vue";
+import { Editor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import Header from "./components/header/header";
-import Content from "./components/content/content";
 
 import "../common/style/index.scss"
 
 export default defineComponent({
     name:"vue-tiptop-editor",
-    setup() {
-
+    props:{
+        modelValue:{
+            type: String,
+            default:""
+        }
+    },
+    emits:["update:modelValue"],
+    setup(props,{emit}) {
         const editor = ref<Editor>()
-
         onMounted( () => {
             editor.value = new Editor({
-                content: '<p>I’m running Tiptap with Vue.js. 🎉</p>',
+                content: '<p></p>',
                 extensions: [
                 StarterKit,
                 ],
+                onUpdate({editor}) {
+                    emit("update:modelValue", editor.getHTML())
+                }
             })
-
-            
+        })
+        onUnmounted( () => {
+            editor.value?.destroy()
         })
 
+        const bindValue = computed( () => props.modelValue )
 
         return () => <div class="editor-container">
             <Header editor={editor}></Header>
-            <Content editor={editor}></Content>
+            <EditorContent v-model={bindValue.value} class="editor-content" editor={editor.value} />
         </div>
     }
 })
