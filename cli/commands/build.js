@@ -17,7 +17,7 @@ const __filenameNew = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filenameNew)
 
 const entryDir = path.resolve(__dirname, '../../vue-tiptop-editor')
-const outputDir = path.resolve(__dirname, '../../build')
+const outputDir = path.resolve(__dirname, '../../dist')
 
 const baseConfig = defineConfig({
     configFile: false,
