@@ -2,11 +2,12 @@
   "name": "vue-tiptop-editor",
   "version": "0.1.0",
   "type": "module",
+  "keywords": ["vue","typescript","tiptop","rich-text"],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "build:component": "node ./cli/commands/build.js",
+    "build:component": "node ./scripts/build.js",
     "build:lib": "pnpm build:component && copy package.json build && copy README.md build"
   },
   "dependencies": {
