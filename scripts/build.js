@@ -9,6 +9,7 @@ import fs from 'fs/promises'
 import { defineConfig, build } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from  '@vitejs/plugin-vue-jsx'
+import dts from 'vite-plugin-dts'
 
 
 import { fileURLToPath } from 'url'
@@ -26,7 +27,11 @@ const _cssDir = path.resolve(__dirname, `../dist/${_moduleName}.js` )
 const baseConfig = defineConfig({
     configFile: false,
     publicDir: false,
-    plugins:[vue(), vueJsx()]
+    plugins:[dts({
+        outputDir:"dist",
+        staticImport: true,
+        insertTypesEntry: true
+    }),vue(), vueJsx() ]
 })
 
 const rollupOptions = {
