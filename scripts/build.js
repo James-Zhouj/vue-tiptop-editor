@@ -5,7 +5,7 @@
 // const vueJsx = require('@vitejs/plugin-vue-jsx')
 
 import path from 'path'
-import fs from 'fs'
+import fs from 'fs/promises'
 import { defineConfig, build } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from  '@vitejs/plugin-vue-jsx'
@@ -18,6 +18,10 @@ const __dirname = path.dirname(__filenameNew)
 
 const entryDir = path.resolve(__dirname, '../packages/vue-tiptop-editor')
 const outputDir = path.resolve(__dirname, '../dist')
+
+const _moduleName = "vue-tiptop-editor"
+
+const _cssDir = path.resolve(__dirname, `../dist/${_moduleName}.js` )
 
 const baseConfig = defineConfig({
     configFile: false,
@@ -42,8 +46,8 @@ const buildAll = async () => {
             rollupOptions,
             lib: {
                 entry: path.resolve(entryDir, 'index.ts'),
-                name:"vue-tiptop-editor",
-                fileName:'vue-tiptop-editor',
+                name:_moduleName,
+                fileName:_moduleName,
                 formats: ['es','umd']
             },
             outDir: outputDir
@@ -53,6 +57,14 @@ const buildAll = async () => {
 
 const buildLib = async () => {
     await buildAll()
+
+    // 将样式文件引入到打包好的入口文件中
+
+    console.log("_cssDir", _cssDir);
+
+    fs.appendFile(_cssDir, "import './style.css'", "utf-8")
+
+
 }
 
 buildLib()
