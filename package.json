@@ -36,6 +36,14 @@
     "vue-tsc": "^1.0.12"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/James-Zhouj/vue-tiptop-editor.git"
+  },
+  "homepage": "https://github.com/James-Zhouj/vue-tiptop-editor/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/James-Zhouj/vue-tiptop-editor/issues"
+  },
   "main": "vue-tiptop-editor.umd.js",
   "module": "vue-tiptop-editor.js",
   "types": "./dist/index.d.ts",

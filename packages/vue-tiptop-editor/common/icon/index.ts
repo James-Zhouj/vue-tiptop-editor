@@ -8,6 +8,8 @@ import H2Svg from "./components/h2"
 import H3Svg from "./components/h3"
 import H4Svg from "./components/h4"
 import H5Svg from "./components/h5"
+import ListNumbersSvg from "./components/list-numbers"
+import ListUnorderedSvg from "./components/list-unordered"
 
 
 export {
@@ -21,4 +23,6 @@ export {
     H3Svg,
     H4Svg,
     H5Svg,
+    ListNumbersSvg,
+    ListUnorderedSvg
 }
