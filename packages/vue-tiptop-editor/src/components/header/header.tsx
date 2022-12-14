@@ -17,7 +17,7 @@ export default defineComponent({
             <BoldSvg onClick={() =>  editor.value.chain().focus().toggleBold().run()}></BoldSvg>
             <ItalicSvg onClick={() => editor.value.chain().focus().toggleItalic().run()}></ItalicSvg>
             <StrikethroughSvg onClick={ () => editor.value.chain().focus().toggleStrike().run()}></StrikethroughSvg>
-            <CodeSvg onClick={ () => editor.value.chain().focus().toggleCode().run()}></CodeSvg>
+            <CodeSvg onClick={ () => editor.value.chain().focus().toggleCodeBlock().run()}></CodeSvg>
             {/* <HighlightSvg onClick={ () =>  editor.value.chain().focus().toggleHighlight().run()}></HighlightSvg> */}
             <H1Svg onClick={ () => editor.value.chain().focus().toggleHeading({ level: 1 }).run()}></H1Svg>
             <H2Svg onClick={ () => editor.value.chain().focus().toggleHeading({ level: 2 }).run()}></H2Svg>
