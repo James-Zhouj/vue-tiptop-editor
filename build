@@ -21,8 +21,6 @@ npm install vue-tiptop-editor
 ```
 import VueTiptopEdditor from 'vue-tiptop-editor'
 
-import 'vue-tiptop-editor/dist/style.css'
-
 createApp(App).use(VueTiptopEditor).mount('#app')
 
 ```
