@@ -10,6 +10,7 @@ import H4Svg from "./components/h4"
 import H5Svg from "./components/h5"
 import ListNumbersSvg from "./components/list-numbers"
 import ListUnorderedSvg from "./components/list-unordered"
+import ImagesdSvg from "./components/images"
 
 
 export {
@@ -24,5 +25,6 @@ export {
     H4Svg,
     H5Svg,
     ListNumbersSvg,
-    ListUnorderedSvg
+    ListUnorderedSvg,
+    ImagesdSvg
 }

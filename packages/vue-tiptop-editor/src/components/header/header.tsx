@@ -1,7 +1,7 @@
-import { defineComponent, inject, onMounted, PropType } from "vue";
+import { defineComponent, inject, onMounted, PropType, ref } from "vue";
 import {Editor } from '@tiptap/vue-3'
 // import BoldSvg from "../../../common/icon/components/bold"
-import { BoldSvg, ItalicSvg, StrikethroughSvg, CodeSvg, HighlightSvg, H1Svg, H2Svg,H3Svg,H4Svg,H5Svg,ListNumbersSvg, ListUnorderedSvg } from "../../../common/icon"
+import { BoldSvg, ItalicSvg, StrikethroughSvg, CodeSvg, HighlightSvg, H1Svg, H2Svg,H3Svg,H4Svg,H5Svg,ListNumbersSvg, ListUnorderedSvg, ImagesdSvg } from "../../../common/icon"
 
 
 
@@ -13,7 +13,17 @@ export default defineComponent({
         }
     },
     setup({ editor }) {
-        return () => <div class="editor-header">
+
+
+        const setImage = () => {
+            const url = ref(window.prompt('URL'))
+            if (url.value) {
+                editor.value.chain().focus().setImage({ src: url.value }).run()
+              }
+        }
+
+        const reenderMenu = () => {
+            return <div class="editor-header">
             <BoldSvg onClick={() =>  editor.value.chain().focus().toggleBold().run()}></BoldSvg>
             <ItalicSvg onClick={() => editor.value.chain().focus().toggleItalic().run()}></ItalicSvg>
             <StrikethroughSvg onClick={ () => editor.value.chain().focus().toggleStrike().run()}></StrikethroughSvg>
@@ -28,6 +38,11 @@ export default defineComponent({
             <div class="divider"/>
             <ListNumbersSvg onClick={ () => editor.value.chain().focus().toggleOrderedList().run()}></ListNumbersSvg>
             <ListUnorderedSvg onClick={ () => editor.value.chain().focus().toggleBulletList().run()}></ListUnorderedSvg>
+            <ImagesdSvg onClick={ setImage}></ImagesdSvg>
         </div>
+        }
+
+
+        return () => reenderMenu()
     }
 })

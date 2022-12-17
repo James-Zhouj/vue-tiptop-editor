@@ -15,7 +15,7 @@ const getValue = () => {
 </script>
 
 <template>
-  <vue-tiptop-editor v-model="value"></vue-tiptop-editor>
+  <vue-tiptop-editor v-model="value" style="height: 600px"></vue-tiptop-editor>
   <button @click="getValue">获取值</button>
 </template>
 
